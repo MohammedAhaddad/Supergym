@@ -1,0 +1,4 @@
+<svg id="delete_outline" xmlns="http://www.w3.org/2000/svg" width="35" height="35" viewBox="0 0 35 35">
+  <rect id="Path" width="35" height="35" fill="rgba(0,0,0,0)"/>
+  <path id="Icon" d="M16.572,27H3.428a2,2,0,0,1-2-2V6H18.572V25A2,2,0,0,1,16.572,27ZM4.286,9V24H15.714V9ZM20,4.5H0v-3H5L6.429,0h7.142L15,1.5h5v3Z" transform="translate(7 4)" fill="red"/>
+</svg>
