@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:get/get.dart';
+import 'package:supergym/controler/publicControler/publicControler.dart';
 import 'package:supergym/view/MyBottm/MyButton.dart';
 
 class MemberShip extends StatelessWidget {
@@ -145,7 +147,470 @@ class MemberShip extends StatelessWidget {
                       fontWeight: FontWeight.bold,
                       fontcolor: Colors.black,
                       fontfamle: "Segoe",
-                      ontab: () {},
+                      ontab: () {
+                        showDialog(
+                            context: context,
+                            builder: (BuildContext context) {
+                              return AlertDialog(
+                                backgroundColor: Color(0xFF373737),
+                                actions: [
+                                  Container(
+                                    padding: EdgeInsets.all(10),
+                                    width: MediaQuery.of(context).size.width,
+                                    height: MediaQuery.of(context).size.height /
+                                        1.6,
+                                    color: Color(0xFF373737),
+                                    child: ListView(children: [
+                                      Row(
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Text(
+                                            "أنشئ تدريبي الخاص",
+                                            style: TextStyle(
+                                                color: Color(0xFFE1E002),
+                                                fontFamily: "Segoe",
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 20),
+                                          )
+                                        ],
+                                      ),
+                                      SizedBox(
+                                        height:
+                                            MediaQuery.of(context).size.height /
+                                                20,
+                                      ),
+                                      Row(
+                                        children: [
+                                          Text(
+                                            "مستوى اللياقة البدنية",
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontFamily: "Segoe",
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 12),
+                                          )
+                                        ],
+                                      ),
+                                      GetBuilder<publicControler>(
+                                          init: publicControler(),
+                                          builder: (controler) {
+                                            return Row(
+                                              children: [
+                                                Row(
+                                                  children: [
+                                                    Radio(
+                                                      value: 'high',
+                                                      groupValue: controler
+                                                          .selectedOption,
+                                                      onChanged: (v) {
+                                                        controler.isSelect(v);
+                                                      },
+                                                      fillColor:
+                                                          MaterialStateProperty
+                                                              .all<Color>(Color(
+                                                                  0xFFE1E002)),
+                                                    ),
+                                                    Text(
+                                                      "عالي",
+                                                      style: TextStyle(
+                                                          color: Colors.white,
+                                                          fontFamily: "Segoe",
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                          fontSize: 12),
+                                                    ),
+                                                  ],
+                                                ),
+                                                Row(
+                                                  children: [
+                                                    Radio(
+                                                      value: 'middle',
+                                                      groupValue: controler
+                                                          .selectedOption,
+                                                      onChanged: (v) {
+                                                        controler.isSelect(v);
+                                                      },
+                                                      fillColor:
+                                                          MaterialStateProperty
+                                                              .all<Color>(Color(
+                                                                  0xFFE1E002)),
+                                                    ),
+                                                    Text(
+                                                      "متوسط",
+                                                      style: TextStyle(
+                                                          color: Colors.white,
+                                                          fontFamily: "Segoe",
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                          fontSize: 12),
+                                                    ),
+                                                  ],
+                                                ),
+                                                Row(
+                                                  children: [
+                                                    Radio(
+                                                      value: 'low',
+                                                      groupValue: controler
+                                                          .selectedOption,
+                                                      onChanged: (v) {
+                                                        controler.isSelect(v);
+                                                      },
+                                                      fillColor:
+                                                          MaterialStateProperty
+                                                              .all<Color>(Color(
+                                                                  0xFFE1E002)),
+                                                    ),
+                                                    Text(
+                                                      "منخفض",
+                                                      style: TextStyle(
+                                                          color: Colors.white,
+                                                          fontFamily: "Segoe",
+                                                          fontWeight:
+                                                              FontWeight.bold,
+                                                          fontSize: 12),
+                                                    ),
+                                                  ],
+                                                )
+                                              ],
+                                            );
+                                          }),
+                                      SizedBox(
+                                        height:
+                                            MediaQuery.of(context).size.height /
+                                                40,
+                                      ),
+                                      Row(
+                                        children: [
+                                          Text(
+                                            "الوزن",
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontFamily: "Segoe",
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 12),
+                                          )
+                                        ],
+                                      ),
+                                      Container(
+                                        margin: EdgeInsets.all(5),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          children: [
+                                            Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.start,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Row(
+                                                  children: [
+                                                    SizedBox(
+                                                      width:
+                                                          MediaQuery.of(context)
+                                                                  .size
+                                                                  .width /
+                                                              40,
+                                                    ),
+                                                    Text(
+                                                      "الوزن الحالي",
+                                                      style: TextStyle(
+                                                          color: Colors.white,
+                                                          fontFamily: "Segoe",
+                                                          fontSize: 10),
+                                                    ),
+                                                  ],
+                                                ),
+                                                Container(
+                                                  margin: EdgeInsets.all(10),
+                                                  height: MediaQuery.of(context)
+                                                          .size
+                                                          .height /
+                                                      20,
+                                                  width: MediaQuery.of(context)
+                                                          .size
+                                                          .width /
+                                                      4,
+                                                  child: TextField(
+                                                    decoration: InputDecoration(
+                                                      hintText: "95 KG",
+                                                      hintStyle: TextStyle(
+                                                          color:
+                                                              Color(0xFF7D7D7D),
+                                                          fontSize: 12),
+                                                      fillColor:
+                                                          Color(0xFF646464),
+                                                      filled: true,
+                                                      border: OutlineInputBorder(
+                                                          borderSide:
+                                                              BorderSide(
+                                                                  color: Colors
+                                                                      .blue),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      10)),
+                                                    ),
+                                                  ),
+                                                )
+                                              ],
+                                            ),
+                                            Container(
+                                              margin: EdgeInsets.only(top: 10),
+                                              child: CircleAvatar(
+                                                radius: MediaQuery.of(context)
+                                                        .size
+                                                        .width /
+                                                    25,
+                                                backgroundColor:
+                                                    Color(0xFFE1E002),
+                                                child: Icon(
+                                                  Icons.arrow_forward,
+                                                  color: Color(0xFF373737),
+                                                ),
+                                              ),
+                                            ),
+                                            Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.start,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Row(
+                                                  children: [
+                                                    SizedBox(
+                                                      width:
+                                                          MediaQuery.of(context)
+                                                                  .size
+                                                                  .width /
+                                                              30,
+                                                    ),
+                                                    Text(
+                                                      "الوزن المطلوب",
+                                                      style: TextStyle(
+                                                          color: Colors.white,
+                                                          fontFamily: "Segoe",
+                                                          fontSize: 10),
+                                                    ),
+                                                  ],
+                                                ),
+                                                Container(
+                                                  margin: EdgeInsets.all(10),
+                                                  height: MediaQuery.of(context)
+                                                          .size
+                                                          .height /
+                                                      20,
+                                                  width: MediaQuery.of(context)
+                                                          .size
+                                                          .width /
+                                                      4,
+                                                  child: TextField(
+                                                    decoration: InputDecoration(
+                                                      hintText: "60 KG",
+                                                      hintStyle: TextStyle(
+                                                          color:
+                                                              Color(0xFF7D7D7D),
+                                                          fontSize: 12),
+                                                      fillColor:
+                                                          Color(0xFF646464),
+                                                      filled: true,
+                                                      border: OutlineInputBorder(
+                                                          borderSide:
+                                                              BorderSide(
+                                                                  color: Colors
+                                                                      .blue),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      10)),
+                                                    ),
+                                                  ),
+                                                )
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      Row(
+                                        children: [
+                                          Text(
+                                            "الوقت",
+                                            style: TextStyle(
+                                                color: Colors.white,
+                                                fontFamily: "Segoe",
+                                                fontWeight: FontWeight.bold,
+                                                fontSize: 12),
+                                          )
+                                        ],
+                                      ),
+                                      Container(
+                                        margin: EdgeInsets.all(5),
+                                        child: Row(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.start,
+                                          children: [
+                                            Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.start,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Row(
+                                                  children: [
+                                                    SizedBox(
+                                                      width:
+                                                          MediaQuery.of(context)
+                                                                  .size
+                                                                  .width /
+                                                              30,
+                                                    ),
+                                                    Text(
+                                                      "يبدأ",
+                                                      style: TextStyle(
+                                                          color: Colors.white,
+                                                          fontFamily: "Segoe",
+                                                          fontSize: 10),
+                                                    ),
+                                                  ],
+                                                ),
+                                                Container(
+                                                  margin: EdgeInsets.all(10),
+                                                  height: MediaQuery.of(context)
+                                                          .size
+                                                          .height /
+                                                      20,
+                                                  width: MediaQuery.of(context)
+                                                          .size
+                                                          .width /
+                                                      4,
+                                                  child: TextField(
+                                                    decoration: InputDecoration(
+                                                      hintText: "8:00",
+                                                      hintStyle: TextStyle(
+                                                          color:
+                                                              Color(0xFF7D7D7D),
+                                                          fontSize: 12),
+                                                      fillColor:
+                                                          Color(0xFF646464),
+                                                      filled: true,
+                                                      border: OutlineInputBorder(
+                                                          borderSide:
+                                                              BorderSide(
+                                                                  color: Colors
+                                                                      .blue),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      10)),
+                                                    ),
+                                                  ),
+                                                )
+                                              ],
+                                            ),
+                                            Container(
+                                              margin: EdgeInsets.only(top: 10),
+                                              child: CircleAvatar(
+                                                radius: MediaQuery.of(context)
+                                                        .size
+                                                        .width /
+                                                    25,
+                                                backgroundColor:
+                                                    Color(0xFFE1E002),
+                                                child: Icon(
+                                                  Icons.arrow_forward,
+                                                  color: Color(0xFF373737),
+                                                ),
+                                              ),
+                                            ),
+                                            Column(
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.start,
+                                              crossAxisAlignment:
+                                                  CrossAxisAlignment.start,
+                                              children: [
+                                                Row(
+                                                  children: [
+                                                    SizedBox(
+                                                      width:
+                                                          MediaQuery.of(context)
+                                                                  .size
+                                                                  .width /
+                                                              30,
+                                                    ),
+                                                    Text(
+                                                      "ينتهي",
+                                                      style: TextStyle(
+                                                          color: Colors.white,
+                                                          fontFamily: "Segoe",
+                                                          fontSize: 10),
+                                                    ),
+                                                  ],
+                                                ),
+                                                Container(
+                                                  margin: EdgeInsets.all(10),
+                                                  height: MediaQuery.of(context)
+                                                          .size
+                                                          .height /
+                                                      20,
+                                                  width: MediaQuery.of(context)
+                                                          .size
+                                                          .width /
+                                                      4,
+                                                  child: TextField(
+                                                    decoration: InputDecoration(
+                                                      hintText: "11:00",
+                                                      hintStyle: TextStyle(
+                                                          color:
+                                                              Color(0xFF7D7D7D),
+                                                          fontSize: 12),
+                                                      fillColor:
+                                                          Color(0xFF646464),
+                                                      filled: true,
+                                                      border: OutlineInputBorder(
+                                                          borderSide:
+                                                              BorderSide(
+                                                                  color: Colors
+                                                                      .blue),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      10)),
+                                                    ),
+                                                  ),
+                                                )
+                                              ],
+                                            ),
+                                          ],
+                                        ),
+                                      ),
+                                      Container(
+                                        margin: EdgeInsets.all(13),
+                                        child: Row(
+                                          children: [
+                                            DefultBigButton(
+                                              height: 40,
+                                              width: 3.5,
+                                              backGroundColor:
+                                                  Color(0xFFE1E002),
+                                              ontab: () {},
+                                              text: "إنشاء",
+                                              fontSize: 11,
+                                              fontWeight: FontWeight.bold,
+                                              fontcolor: Colors.black,
+                                              fontfamle: "Segoe",
+                                            )
+                                          ],
+                                        ),
+                                      )
+                                    ]),
+                                  ),
+                                ],
+                              );
+
+                              // );
+                            });
+                      },
                       backGroundColor: Color(0xFFE1E002),
                     ),
                   ],

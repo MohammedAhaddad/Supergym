@@ -70,7 +70,7 @@ class MainPage extends StatelessWidget {
             body: PageView(
                 physics: const NeverScrollableScrollPhysics(),
                 controller: controlr.pageController,
-                children: const [
+                children: [
                   Home(),
                   Service(),
                   MemberShip(),

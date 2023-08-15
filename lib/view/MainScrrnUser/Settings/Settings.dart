@@ -1,14 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_svg/svg.dart';
-import 'package:get/get.dart';
-import 'package:supergym/view/Auth/Login/Login.dart';
-import 'package:supergym/view/MainScrrnUser/Coach/Coach.dart';
-import 'package:supergym/view/MainScrrnUser/Personal/Personal.dart';
-import 'package:supergym/view/MainScrrnUser/Schedual/Schedual.dart';
-import 'package:supergym/view/MainScrrnUser/Settings/Settings.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 
-class Profile extends StatelessWidget {
-  const Profile({Key? key}) : super(key: key);
+class Settings extends StatelessWidget {
+  const Settings({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
@@ -78,7 +72,7 @@ class Profile extends StatelessWidget {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Text(
-                    "الملف الشخصي",
+                    "الإعدادات",
                     style: TextStyle(
                         fontFamily: "Segoe",
                         fontSize: 40,
@@ -88,32 +82,32 @@ class Profile extends StatelessWidget {
                 ],
               ),
             ),
-            Container(
-              padding: const EdgeInsets.all(15),
-              child: Row(children: [
-                const CircleAvatar(
-                    radius: 40,
-                    backgroundImage: AssetImage("assets/Imag/hh.png")),
-                SizedBox(
-                  width: MediaQuery.of(context).size.width / 50,
-                ),
-                const Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    Text("يوسف المصري",
-                        style: TextStyle(
-                            fontFamily: "Poppins",
-                            fontSize: 16,
-                            color: Colors.white)),
-                    Text("+924048573",
-                        style: TextStyle(
-                            fontFamily: "Poppins",
-                            fontSize: 12,
-                            color: Colors.white))
-                  ],
-                )
-              ]),
-            ),
+            // Container(
+            //   padding: const EdgeInsets.all(15),
+            //   child: Row(children: [
+            //     const CircleAvatar(
+            //         radius: 40,
+            //         backgroundImage: AssetImage("assets/Imag/hh.png")),
+            //     SizedBox(
+            //       width: MediaQuery.of(context).size.width / 50,
+            //     ),
+            //     const Column(
+            //       crossAxisAlignment: CrossAxisAlignment.start,
+            //       children: [
+            //         Text("يوسف المصري",
+            //             style: TextStyle(
+            //                 fontFamily: "Poppins",
+            //                 fontSize: 16,
+            //                 color: Colors.white)),
+            //         Text("+924048573",
+            //             style: TextStyle(
+            //                 fontFamily: "Poppins",
+            //                 fontSize: 12,
+            //                 color: Colors.white))
+            //       ],
+            //     )
+            //   ]),
+            // ),
             Container(
               padding: EdgeInsets.all(20),
               child: Column(children: [
@@ -121,62 +115,16 @@ class Profile extends StatelessWidget {
                   height: MediaQuery.of(context).size.height / 20,
                 ),
                 InkWell(
-                  onTap: () {
-                    Get.to(() => Personal());
-                  },
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      SvgPicture.asset("assets/Imag/Icon feather-user2.svg"),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width / 35,
-                      ),
-                      Text("معلومات شخصية",
-                          style: TextStyle(
-                              fontFamily: "Poppins",
-                              fontSize: 20,
-                              color: Colors.white))
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height / 40,
-                ),
-                InkWell(
-                  onTap: () {
-                    Get.to(() => Schedual());
-                  },
-                  child: Row(
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      SvgPicture.asset("assets/Imag/Icon ionic-md-time.svg"),
-                      SizedBox(
-                        width: MediaQuery.of(context).size.width / 35,
-                      ),
-                      Text("الجدول",
-                          style: TextStyle(
-                              fontFamily: "Poppins",
-                              fontSize: 20,
-                              color: Colors.white))
-                    ],
-                  ),
-                ),
-                SizedBox(
-                  height: MediaQuery.of(context).size.height / 40,
-                ),
-                InkWell(
-                  onTap: () {
-                    Get.to(() => MyCoach());
-                  },
+                  onTap: () {},
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
                       SvgPicture.asset(
-                          "assets/Imag/dumbell-gym-healthy-life-svgrepo-com.svg"),
+                          "assets/Imag/Icon material-language.svg"),
                       SizedBox(
                         width: MediaQuery.of(context).size.width / 35,
                       ),
-                      Text("المدرب",
+                      Text("معلومات شخصية",
                           style: TextStyle(
                               fontFamily: "Poppins",
                               fontSize: 20,
@@ -197,7 +145,7 @@ class Profile extends StatelessWidget {
                       SizedBox(
                         width: MediaQuery.of(context).size.width / 35,
                       ),
-                      Text("المساعدة",
+                      Text("حول",
                           style: TextStyle(
                               fontFamily: "Poppins",
                               fontSize: 20,
@@ -209,17 +157,15 @@ class Profile extends StatelessWidget {
                   height: MediaQuery.of(context).size.height / 40,
                 ),
                 InkWell(
-                  onTap: () {
-                    Get.to(() => Settings());
-                  },
+                  onTap: () {},
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
-                      SvgPicture.asset("assets/Imag/Icon feather-settings.svg"),
+                      SvgPicture.asset("assets/Imag/Icon feather-shield.svg"),
                       SizedBox(
                         width: MediaQuery.of(context).size.width / 35,
                       ),
-                      Text("الإعدادات",
+                      Text("سياسة الخصوصية",
                           style: TextStyle(
                               fontFamily: "Poppins",
                               fontSize: 20,
@@ -231,9 +177,48 @@ class Profile extends StatelessWidget {
                   height: MediaQuery.of(context).size.height / 40,
                 ),
                 InkWell(
-                  onTap: () {
-                    Get.to(() => Login());
-                  },
+                  onTap: () {},
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      SvgPicture.asset("assets/Imag/Icon feather-phone3.svg"),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width / 35,
+                      ),
+                      Text("اتصل بنا",
+                          style: TextStyle(
+                              fontFamily: "Poppins",
+                              fontSize: 20,
+                              color: Colors.white))
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height / 40,
+                ),
+                InkWell(
+                  onTap: () {},
+                  child: Row(
+                    crossAxisAlignment: CrossAxisAlignment.center,
+                    children: [
+                      SvgPicture.asset(
+                          "assets/Imag/Icon feather-message-circle2.svg"),
+                      SizedBox(
+                        width: MediaQuery.of(context).size.width / 35,
+                      ),
+                      Text("دردش معنا",
+                          style: TextStyle(
+                              fontFamily: "Poppins",
+                              fontSize: 20,
+                              color: Colors.white))
+                    ],
+                  ),
+                ),
+                SizedBox(
+                  height: MediaQuery.of(context).size.height / 40,
+                ),
+                InkWell(
+                  onTap: () {},
                   child: Row(
                     crossAxisAlignment: CrossAxisAlignment.center,
                     children: [
